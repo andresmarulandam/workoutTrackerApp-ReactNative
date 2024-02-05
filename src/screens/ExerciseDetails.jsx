@@ -1,5 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
+import NewSetInput from '../components/NewSetInput';
 
 const ExerciseDetails = ({ route }) => {
   const { item } = route.params;
@@ -18,20 +19,24 @@ const ExerciseDetails = ({ route }) => {
           </Text>
         </View>
       </View>
-      <ScrollView contentContainerStyle={styles.instructionsContainer}>
-        <Text
-          style={styles.instructions}
-          numberOfLines={isInstructionExpanded ? 0 : 4}
-        >
-          {item.instructions}
-        </Text>
-        <Text
-          onPress={() => setIsInstructionExpanded(!isInstructionExpanded)}
-          style={styles.seeMore}
-        >
-          {isInstructionExpanded ? 'See Less' : 'See more'}
-        </Text>
-      </ScrollView>
+      <View>
+        <ScrollView contentContainerStyle={styles.instructionsContainer}>
+          <Text
+            style={styles.instructions}
+            numberOfLines={isInstructionExpanded ? 0 : 4}
+          >
+            {item.instructions}
+          </Text>
+          <Text
+            onPress={() => setIsInstructionExpanded(!isInstructionExpanded)}
+            style={styles.seeMore}
+          >
+            {isInstructionExpanded ? 'See Less' : 'See more'}
+          </Text>
+        </ScrollView>
+      </View>
+
+      <NewSetInput />
     </View>
   );
 };

@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
+import NewSetInput from './NewSetInput';
 
 export default function ExerciseList({ item }) {
   const navigation = useNavigation();
